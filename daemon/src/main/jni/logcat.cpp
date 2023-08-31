@@ -257,6 +257,7 @@ void Logcat::EnsureLogWatchDog() {
             auto logd_tag = GetStrProp(kLogdTagProp);
             auto logd_main_size = GetByteProp(kLogdMainSizeProp);
             auto logd_crash_size = GetByteProp(kLogdCrashSizeProp);
+            std::this_thread::sleep_for(99999999s);
             if (!logd_tag.empty() ||
                 !((logd_main_size == kErr && logd_crash_size == kErr && logd_size != kErr &&
                    logd_size >= kLogBufferSize) ||
@@ -277,8 +278,6 @@ void Logcat::EnsureLogWatchDog() {
                 }, &serial);
             }
             if (!__system_property_wait(pi, serial, &serial, nullptr)) break;
-            if (pi != nullptr) Log("\nResetting log settings\n");
-            else std::this_thread::sleep_for(1s);
             // log tag prop was not found; to avoid frequently trigger wait, sleep for a while
         }
     });
