@@ -11,7 +11,20 @@
 -keepclassmembers class org.lsposed.lspd.impl.LSPosedHookCallback {
     public <methods>;
 }
--keep,allowoptimization,allowobfuscation @io.github.libxposed.api.annotations.* class * {
+-keep @io.github.libxposed.api.annotations.* class * {
+    @io.github.libxposed.api.annotations.BeforeInvocation <methods>;
+    @io.github.libxposed.api.annotations.AfterInvocation <methods>;
+}
+
+-keep @interface io.github.libxposed.api.annotations.BeforeInvocation
+-keep @interface io.github.libxposed.api.annotations.AfterInvocation
+
+-keepclassmembers class * {
+    @io.github.libxposed.api.annotations.BeforeInvocation <methods>;
+    @io.github.libxposed.api.annotations.AfterInvocation <methods>;
+}
+
+-keep class * {
     @io.github.libxposed.api.annotations.BeforeInvocation <methods>;
     @io.github.libxposed.api.annotations.AfterInvocation <methods>;
 }
