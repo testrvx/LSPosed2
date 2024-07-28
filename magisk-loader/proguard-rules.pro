@@ -8,6 +8,8 @@
     public static boolean *(android.os.IBinder, int, long, long, int);
 }
 
+-keep class org.slf4j.impl.** { *; }
+
 -assumenosideeffects class android.util.Log {
     public static *** v(...);
     public static *** d(...);
