@@ -40,16 +40,16 @@ jobs:
             echo ${{ secrets.KEY_STORE }} | base64 --decode > key.jks
           fi
 
-      - name: Checkout libxposed/api
+      - name: Checkout pumPCin/api
         uses: actions/checkout@v3
         with:
-          repository: libxposed/api
+          repository: pumPCin/api
           path: libxposed/api
 
-      - name: Checkout libxposed/service
+      - name: Checkout pumPCin/service
         uses: actions/checkout@v3
         with:
-          repository: libxposed/service
+          repository: pumPCin/service
           path: libxposed/service
 
       - name: Setup Java
