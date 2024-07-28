@@ -117,7 +117,7 @@ int main(int argc, char **argv) {
 
     const char *new_argv[argc + 2];
     for (int i = 0; i < argc; i++) new_argv[i] = argv[i];
-    new_argv[argc] = "--inline-max-code-units=0";
+    new_argv[argc] = "--inline-max-code-units=16";
     new_argv[argc + 1] = NULL;
     fexecve(stock_fd, (char **) new_argv, environ);
     PLOGE("fexecve failed");
