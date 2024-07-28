@@ -6,6 +6,7 @@
 #include <android/log.h>
 #include <array>
 #include <cinttypes>
+#include <functional>
 #include <chrono>
 #include <thread>
 #include <sys/system_properties.h>
