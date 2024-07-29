@@ -8,7 +8,6 @@
     public static boolean *(android.os.IBinder, int, long, long, int);
 }
 
--dontwarn org.slf4j.impl.StaticMDCBinder
 
 -assumenosideeffects class android.util.Log {
     public static *** v(...);
@@ -17,3 +16,4 @@
 -repackageclasses
 -allowaccessmodification
 -dontwarn org.slf4j.impl.StaticLoggerBinder
+-dontwarn org.slf4j.impl.StaticMDCBinder
