@@ -8,6 +8,9 @@
     public static boolean *(android.os.IBinder, int, long, long, int);
 }
 
+-keep class kotlinx.parcelize.** { * ;}
+-keep class org.slf4j.impl.StaticMDCBinder { *; }
+-keep class org.slf4j.impl.StaticMarkerBinder { *; }
 
 -assumenosideeffects class android.util.Log {
     public static *** v(...);
@@ -16,4 +19,3 @@
 -repackageclasses
 -allowaccessmodification
 -dontwarn org.slf4j.impl.StaticLoggerBinder
--dontwarn org.slf4j.impl.StaticMDCBinder
