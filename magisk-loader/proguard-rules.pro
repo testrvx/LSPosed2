@@ -11,6 +11,8 @@
 -keep class org.slf4j.** { *; }
 -keep class org.slf4j.impl.** { *; }
 
+-keepnames class org.slf4j.impl.StaticMDCBinder
+
 -assumenosideeffects class android.util.Log {
     public static *** v(...);
     public static *** d(...);
