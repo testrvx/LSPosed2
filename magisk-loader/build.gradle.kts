@@ -53,6 +53,10 @@ android {
         buildConfig = true
     }
 
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     defaultConfig {
         applicationId = "org.lsposed.lspd"
         multiDexEnabled = false
