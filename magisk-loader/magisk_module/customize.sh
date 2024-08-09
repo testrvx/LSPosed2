@@ -149,7 +149,7 @@ elif [ "$FLAVOR" == "riru" ]; then
   fi
 fi
 
-if [ "$API" -ge 29 ]; then
+if [ "$API" -ge 9999 ]; then
   ui_print "- Extracting dex2oat binaries"
   mkdir "$MODPATH/bin"
 
@@ -177,7 +177,7 @@ if [ "$API" -ge 29 ]; then
   sed -i "s/5291374ceda0aef7c5d86cd2a4f6a3ac/$DEV_PATH/" "$MODPATH/bin/dex2oat32"
   sed -i "s/5291374ceda0aef7c5d86cd2a4f6a3ac/$DEV_PATH/" "$MODPATH/bin/dex2oat64"
 else
-  extract "$ZIPFILE" 'system.prop' "$MODPATH"
+  :
 fi
 
 set_perm_recursive "$MODPATH" 0 0 0755 0644
