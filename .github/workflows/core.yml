@@ -40,16 +40,16 @@ jobs:
             echo ${{ secrets.KEY_STORE }} | base64 --decode > key.jks
           fi
 
-      - name: Checkout pumPCin/api
+      - name: Checkout DanGLES3/api
         uses: actions/checkout@v3
         with:
-          repository: pumPCin/api
+          repository: DanGLES3/api
           path: libxposed/api
 
-      - name: Checkout pumPCin/service
+      - name: Checkout DanGLES3/service
         uses: actions/checkout@v3
         with:
-          repository: pumPCin/service
+          repository: DanGLES3/service
           path: libxposed/service
 
       - name: Setup Java
